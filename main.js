@@ -6,59 +6,52 @@ chrome.contextMenus.create({
     contexts: ['selection'],
 });
 
+chrome.contextMenus.create({
+    title:"Convert to Latin alphabet",
+    id: "convertToLatin",
+    contexts: ['selection'],
+});
+
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
     if (info.menuItemId === 'convertToCyrillic') {
       convertCyrillic(info.selectionText);
     }
-});
 
+    if (info.menuItemId === 'convertToLatin') {
+        convertLatin(info.selectionText);
+    }
+});
 
 // LOWER: й ц у к е н г ш щ з х ъ ф ы в а п р о л д ж э я ч с м и т ь б ю
 // UPPER: Й Ц У К Е Н Г Ш Щ З Х Ъ Ф Ы В А П Р О Л Д Ж Э Я Ч С М И Т Ь Б Ю
 
-var dict = new Map([
-    ["y", "й"],
-    ["ts", "ц"],
-    ["u", "у"],
-    ["k", "к"],
-    ["ye", "е"],
-    ["n", "н"],
-    ["g", "г"],
-    ["sh", "ш"],
-    ["sha", "щ"],
-    ["z", "з"],
-    ["kh", "х"],
-    ['"', "ъ"],
-    ["f", "ф"],
-    ["y'", "ы"],
-    ["v", "в"],
-    ["a", "а"],
-    ["p", "п"],
-    ["r", "р"],
-    ["o", "о"],
-    ["l", "л"],
-    ["d", "д"],
-    ["zh", "ж"],
-    ["e", "э"],
-    ["ya", "я"],
-    ["ch", "ч"],
-    ["s", "с"],
-    ["m", "м"],
-    ["i", "и"],
-    ["t", "т"],
-    ["'", "ь"],
-    ["b", "б"],
-    ["yu", "ю"]
-]);
+var cyrillic = [
+    "я", "ц", "у", "к", "е", "н", "г", "ш", "щ",
+    "ж", "х", "ъ", "ф", "ы", "в", "а", "п", "р", "о",
+    "л", "д", "з", "э", "й", "ч", "с", "м", "и", "т",
+    "ь", "б", "ю"
+]
 
-// var dict_lower = {
-//     "": ""
-// };
+var phonics = [
+    "ya", "ts", "u", "k", "ye", "n", "g", "sh", "sha",
+    "zh", "kh", '"', "f", "y'", "v", "a", "p", "r","o",
+    "l", "d", "z", "e", "y", "ch", "s", "m", "i", "t",
+    "'", "b", "yu"
+];
 
 
 function convertCyrillic(selected_text) {
-    console.log("you selected \"" + selected_text + "\"");
+    for (let i = 0; i < selected_text.length; i++) {
+        for (let k = 0; k < phonics.length; k++) {
+            if (selected_text.includes(phonics[k])) {
+                selected_text = selected_text.replace(phonics[k], cyrillic[k]);
+            }
+        }
+    }
 
-    
+    console.log(selected_text);
 }
 
+function convertLatin(selected_text) {
+    return selected_text;
+}
