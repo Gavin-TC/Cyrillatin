@@ -44,7 +44,7 @@ var dict = new Map([
     ["ch", "ч"],
     ["s", "с"],
     ["m", "м"],
-    ["yi", "и"],
+    ["i", "и"],
     ["t", "т"],
     ["'", "ь"],
     ["b", "б"],
@@ -59,9 +59,6 @@ var dict = new Map([
 function convertCyrillic(selected_text) {
     console.log("you selected \"" + selected_text + "\"");
 
-    let text = "";
-
     
-
 }
 
