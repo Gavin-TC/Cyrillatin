@@ -12,6 +12,6 @@ Cyrillatin is easy to use.
 **OR**
 - Simply select **Cyrillic** letters that you want to Convert into the Latin Alphabet
 - Then **right-click**, hover your mouse over **Cyrillatin** and click **Convert to Latin**.
-- The converted text is now **copied** to your **clipboard**.
+- The **converted text** is now **copied** to your **clipboard**.
 
 **Example**: the Latin phonic "ponyal" would be converted into the Cyrillic "понял" meaning "got it" or "understood."
