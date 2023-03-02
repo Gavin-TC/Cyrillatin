@@ -8,4 +8,6 @@ Cyrillatin is easy to use.
 - Then **select** the text.
 - **Right-click** and click "**Convert to Cyrillic**".
 
+--OR
+
 **Example**: the Latin phonic "ponyal" would be converted into the Cyrillic "понял" meaning "got it" or "understood."
