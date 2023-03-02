@@ -10,7 +10,7 @@ Cyrillatin is easy to use.
 - The converted text is now **copied** to your **clipboard**.
 
 **OR**
-- Simply select **Cyrillic** letters that you want to convert into the **Latin Alphabet**.
+- Simply select **Cyrillic** letters that you want to **convert** into the **Latin Alphabet**.
 - Then **right-click**, hover your mouse over **Cyrillatin** and click **Convert to Latin**.
 - The **converted text** is now **copied** to your **clipboard**.
 
