@@ -48,10 +48,24 @@ function convertCyrillic(selected_text) {
             }
         }
     }
-
+    
     console.log(selected_text);
+    copy_to_clipboard(selected_text);
 }
 
 function convertLatin(selected_text) {
-    return selected_text;
+    for (let i = 0; i < selected_text.length; i++) {
+        for (let k = 0; k < cyrillic.length; k++) {
+            if (selected_text.includes(cyrillic[k])) {
+                selected_text = selected_text.replace(cyrillic[k], phonics[k]);
+            }
+        }
+    }
+
+    console.log(selected_text);
+    copy_to_clipboard(selected_text);
+}
+
+function copy_to_clipboard(text) {
+    
 }
