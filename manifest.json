@@ -11,7 +11,8 @@
     },
 
     "permissions": [
-        "contextMenus"
+        "contextMenus",
+        "clipboardWrite"
     ],
 
     "background": {

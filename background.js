@@ -1,5 +1,3 @@
-console.log("background.js loaded");
-
 chrome.contextMenus.create({
     title: "Convert to Cyrillic",
     id: "convertToCyrillic",
@@ -67,5 +65,9 @@ function convertLatin(selected_text) {
 }
 
 function copy_to_clipboard(text) {
+    navigator.clipboard.writeText(text)
+    .then(() => {
+        console.log("Converted text copied to clipboard successfully.");
+    });
     
 }
