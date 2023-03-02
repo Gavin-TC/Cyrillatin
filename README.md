@@ -4,10 +4,12 @@ This makes it easy for people learning Russian to type in Cyrillic without havin
 
 ## How to use
 Cyrillatin is easy to use. 
-- Simply type in **phonics** (such as "ch", "ya", or "zh") from the Latin alphabet that you want to convert into Cyrillic.
+- Simply type in **phonics** (such as "ch", "ya", or "zh") from the Latin alphabet that you want to convert into **Cyrillic**.
 - Then **select** the text.
 - **Right-click** and click "**Convert to Cyrillic**".
 
-
+**OR**
+- Simply select **Cyrillic** letters that you want to Convert into the Latin Alphabet
+- Then **right-click**, hover your mouse over **Cyrillatin** and click **Convert to Latin**.
 
 **Example**: the Latin phonic "ponyal" would be converted into the Cyrillic "понял" meaning "got it" or "understood."
