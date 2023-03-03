@@ -8,5 +8,17 @@
         "16": "icons/logo2_16.png",
         "48": "icons/logo2_48.png",
         "128": "icons/logo2_128.png"
+    },
+
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+
+        "js": ["content.js"]
+    }],
+
+    "background": {
+        "service_worker": "background.js"
     }
 }
