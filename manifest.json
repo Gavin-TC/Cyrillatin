@@ -8,16 +8,5 @@
         "16": "icons/logo2_16.png",
         "48": "icons/logo2_48.png",
         "128": "icons/logo2_128.png"
-    },
-
-    "permissions": [
-        "contextMenus",
-        "clipboardWrite",
-        "tabs",
-        "activeTab"
-    ],
-
-    "background": {
-        "service_worker": "service_worker.js"
     }
 }
