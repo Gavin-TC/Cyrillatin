@@ -10,6 +10,11 @@
         "128": "icons/logo2_128.png"
     },
 
+    "permissions": [
+        "contextMenus",
+        "tabs"
+    ],
+
     "content_scripts": [{
         "matches": [
             "<all_urls>"
