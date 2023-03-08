@@ -1,4 +1,3 @@
-console.log("content.js is running");
 converted_text = "";
 
 

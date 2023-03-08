@@ -1,7 +1,3 @@
-console.log("background script is running fine");
-// a background script monitors events i the browser (i.e. selecting text)
-
-
 chrome.contextMenus.create({
     title: "Convert to Cyrillic",
     id: "convert_cyrillic",
@@ -46,10 +42,10 @@ var phonics = [
     "'", "b", "yu", "k"
 ];
 var phonics_upper = [
-    "Ya", "Ts", "U", "C", "Ye", "N", "G", "Sh", "Sha",
-    "Zh", "Kh", '"', "F", "Y'", "V", "A", "P", "R", "O",
-    "L", "D", "Z", "E", "Y", "Ch", "S", "M", "I", "T",
-    "'", "B", "Yu", "K"
+    "YA", "TS", "U", "C", "YE", "N", "G", "SH", "SHA",
+    "ZH", "KH", '"', "F", "Y'", "V", "A", "P", "R", "O",
+    "L", "D", "Z", "E", "Y", "CH", "S", "M", "I", "T",
+    "'", "B", "YU", "K"
 ];
 
 
@@ -68,8 +64,6 @@ function convertCyrillic(tab, selected_text) {
         }
     }
     converted_text = selected_text;
-
-    console.log(selected_text + ": convert cyrillic");
     chrome.tabs.sendMessage(tab.id, { type: 'replaceSelection', text: converted_text });
 }
 
@@ -90,7 +84,5 @@ function convertLatin(tab, selected_text) {
     }
 
     converted_text = selected_text;
-
-    console.log(selected_text + ": convert latin");
     chrome.tabs.sendMessage(tab.id, { type: 'replaceSelection', text: converted_text });
 }
