@@ -54,12 +54,17 @@ function convertCyrillic(tab, selected_text) {
 
     for (let i = 0; i < selected_text.length; i++) { // check every character inside of the selected_text
         for (let j = 0; j < phonics.length; j++) { // check if the current character contains an item from the phonics array, capitals first
+            console.log(j);
             if(selected_text.includes(phonics_upper[j])) {
                 selected_text = selected_text.replace(phonics_upper[j], cyrillic_upper[j]);
+                console.log("reset");
+                j = -1;
             }
 
             if (selected_text.includes(phonics[j])) { // replace the character that matches the corresponding phonic with the corresponding cyrillic character
                 selected_text = selected_text.replace(phonics[j], cyrillic[j]);
+                console.log("reset");
+                j = -1;
             }
         }
     }
@@ -75,10 +80,12 @@ function convertLatin(tab, selected_text) {
         for (let j = 0; j < cyrillic.length; j++) { // check if the current character contains an item from the cyrillic array
             if(selected_text.includes(cyrillic_upper[j])) {
                 selected_text = selected_text.replace(cyrillic_upper[j], phonics_upper[j]);
+                j = -1;
             }
 
             if (selected_text.includes(cyrillic[j])) { // replace the character that matches the corresponding phonic with the corresponding cyrillic character
                 selected_text = selected_text.replace(cyrillic[j], phonics[j]);
+                j = -1;
             }
         }
     }
