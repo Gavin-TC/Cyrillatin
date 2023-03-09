@@ -22,52 +22,45 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 
 
 var cyrillic = [
-    "я", "ц", "у", "к", "е", "н", "г", "ш", "щ",
-    "ж", "х", "ъ", "ф", "ы", "в", "а", "п", "р", "о",
-    "л", "д", "з", "э", "й", "ч", "с", "м", "и", "т",
-    "ь", "б", "ю", "к"
+    "ц", "я", "э", "ш", "щ", "ж", "х", "ё", "ч", "ю", "й",
+    "у", "к", "н", "г", "ф", "в", "а", "п", "р", "о", "л", "д", "з", "е", "с", "м", "и", "т", "б", "ы"
 ];
 var cyrillic_upper = [
-    "Я", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ",
-    "Ж", "Х", "Ъ", "Ф", "Ы", "В", "А", "П", "Р", "О",
-    "Л", "Д", "З", "Э", "Й", "Ч", "С", "М", "И", "Т",
-    "Ь", "Б", "Ю", "К"
+    "Ц", "Я", "Э", "Ш", "Щ", "Ж", "Х", "Ё", "Ч", "Ю", "Й",
+    "У", "К", "Н", "Г", "Ф", "В", "А", "П", "Р", "О", "Л", "Д", "З", "Е", "С", "М", "И", "Т", "Б", "Ы"
 ];
 
 
 var phonics = [
-    "ya", "ts", "u", "c", "ye", "n", "g", "sh", "sha",
-    "zh", "kh", '"', "f", "y'", "v", "a", "p", "r", "o",
-    "l", "d", "z", "e", "y", "ch", "s", "m", "i", "t",
-    "'", "b", "yu", "k"
+    "ts", "ya", "ee", "sh", "sha", "zh", "kh", "yo", "ch", "yu", "y'",
+    "u", "k", "n", "g", "f", "v", "a", "p", "r", "o", "l", "d", "z", "e", "s", "m", "yi", "t", "b", "i"
 ];
 var phonics_upper = [
-    "YA", "TS", "U", "C", "YE", "N", "G", "SH", "SHA",
-    "ZH", "KH", '"', "F", "Y'", "V", "A", "P", "R", "O",
-    "L", "D", "Z", "E", "Y", "CH", "S", "M", "I", "T",
-    "'", "B", "YU", "K"
-];
+    "TS", "YA", "EE", "SH", "SHA", "ZH", "KH", "YO", "CH", "YU", "Y'",
+    "U", "K", "N", "G", "F", "V", "A", "P", "R", "O", "L", "D", "Z", "E", "S", "M", "YI", "T", "B", "I"
+]
+
+// double phonic: ya, ts, ye, sh, sha, zh, kh, yo, ch, yu, y'
+// single phonic: u, k, n, g, f, v, a, p, r, o, l, d, z, e, s, m, i, t, b, k, y
 
 
 function convertCyrillic(tab, selected_text) {
     original_text = selected_text;
 
     for (let i = 0; i < selected_text.length; i++) { // check every character inside of the selected_text
-        for (let j = 0; j < phonics.length; j++) { // check if the current character contains an item from the phonics array, capitals first
+        for (let j = 0; j < phonics.length; j++) { // check if the current character contains an item from the phonics array, lowercase first
             console.log(j);
-            if(selected_text.includes(phonics_upper[j])) {
-                selected_text = selected_text.replace(phonics_upper[j], cyrillic_upper[j]);
-                console.log("reset");
-                j = -1;
-            }
-
             if (selected_text.includes(phonics[j])) { // replace the character that matches the corresponding phonic with the corresponding cyrillic character
                 selected_text = selected_text.replace(phonics[j], cyrillic[j]);
-                console.log("reset");
+                j = -1;
+            }
+            if(selected_text.includes(phonics_upper[j])) {
+                selected_text = selected_text.replace(phonics_upper[j], cyrillic_upper[j]);
                 j = -1;
             }
         }
     }
+
     converted_text = selected_text;
     chrome.tabs.sendMessage(tab.id, { type: 'replaceSelection', text: converted_text });
 }
@@ -78,13 +71,12 @@ function convertLatin(tab, selected_text) {
 
     for (let i = 0; i < selected_text.length; i++) { // check every character inside of the selected_text
         for (let j = 0; j < cyrillic.length; j++) { // check if the current character contains an item from the cyrillic array
-            if(selected_text.includes(cyrillic_upper[j])) {
-                selected_text = selected_text.replace(cyrillic_upper[j], phonics_upper[j]);
-                j = -1;
-            }
-
             if (selected_text.includes(cyrillic[j])) { // replace the character that matches the corresponding phonic with the corresponding cyrillic character
                 selected_text = selected_text.replace(cyrillic[j], phonics[j]);
+                j = -1;
+            }
+            if(selected_text.includes(cyrillic_upper[j])) {
+                selected_text = selected_text.replace(cyrillic_upper[j], phonics_upper[j]);
                 j = -1;
             }
         }
