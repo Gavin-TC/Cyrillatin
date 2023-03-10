@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #2c5370;
+    color: #fff;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 150%);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.text {
+    display: inline-block;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.logo {
+    display: inline-block;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.button-container {
+    margin: 5px 0;
+}
+
+.donate-button {
+    white-space: nowrap;
+    display: block;
+    padding: 10px 10px;
+    background-color: #337ab7;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+.github-button {
+    white-space: nowrap;
+    display: block;
+    padding: 10px 10px;
+    background-color: #337ab7;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
