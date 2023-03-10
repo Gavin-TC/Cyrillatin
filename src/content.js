@@ -6,10 +6,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 
     if (message.type === 'replaceSelection') {
         var selection = document.getSelection().toLocaleString();
-        setTimeout(function() {
-          replace_text(selection, converted_text);
-        }, 500); // delay execution by 0.5 seconds
-        
+        replace_text(selection, converted_text);
         //replace_text(selection, converted_text);
     }
 });
