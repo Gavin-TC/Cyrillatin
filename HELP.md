@@ -1,4 +1,4 @@
-# HELP
+# Help with Cyrillatin
 ## How to use phonics?
 - Here are the phonics that Cyrillatin will convert:
   - "ts", "ya", "ee", "sh", "sha", "zh", "kh", "yo", "ch", "yu", "y'", "u", "k", "n", "g", "f", "v", "a", "p", "r", "o", "l", "d", "z", "e", "s", "m", "yi", "t", "b", and "i"
