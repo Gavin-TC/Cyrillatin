@@ -7,7 +7,6 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     if (message.type === 'replaceSelection') {
         var selection = document.getSelection().toLocaleString();
         replace_text(selection, converted_text);
-        //replace_text(selection, converted_text);
     }
 });
 
