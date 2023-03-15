@@ -32,12 +32,12 @@ var cyrillic_upper = [
 
 
 var phonics = [
-    "ts", "ya", "ee", "sha", "sc", "zh", "kh", "yo", "ch", "yu", "y'",
-    "u", "k", "n", "g", "f", "v", "a", "p", "r", "o", "l", "d", "z", "e", "s", "m", "yi", "t", "b", "i", "'"
+    "ts", "ya", "ee", "sha", "shch", "zh", "kh", "yo", "ch", "yu", "y'",
+    "u", "k", "n", "g", "f", "v", "a", "p", "r", "o", "l", "d", "z", "e", "s", "m", "i", "t", "b", "y", "'"
 ];
 var phonics_upper = [
-    "TS", "YA", "EE", "SH", "SC", "ZH", "KH", "YO", "CH", "YU", "Y'",
-    "U", "K", "N", "G", "F", "V", "A", "P", "R", "O", "L", "D", "Z", "E", "S", "M", "YI", "T", "B", "I", "'"
+    "TS", "YA", "EE", "SH", "SHCH", "ZH", "KH", "YO", "CH", "YU", "Y'",
+    "U", "K", "N", "G", "F", "V", "A", "P", "R", "O", "L", "D", "Z", "E", "S", "M", "I", "T", "B", "Y", "'"
 ]
 
 // double phonic: ya, ts, ye, sh, sha, zh, kh, yo, ch, yu, y'
