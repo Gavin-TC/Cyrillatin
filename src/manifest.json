@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Cyrillatin",
     "description": "Allows conversion of latin phonics to cyrillic characters and vice versa.",
-    "version": "1.21",
+    "version": "1.3",
 
     "icons": {
         "16": "icons/logo2_16.png",
