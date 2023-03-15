@@ -10,8 +10,8 @@
 ## Planned
 - Options page
     - This means possible options such as:
+        - Changing how/when the conversion happens
         - Customizing the phonics 'library'
             - Importable/exportable phonics 'libaries'
-        - Changing how/when the conversion happens
 
 
