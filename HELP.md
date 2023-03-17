@@ -6,4 +6,4 @@
 
 ## Why doesn't Cyrillatin work on [website]?
   - Cyrillatin works by detecting editable contents inside of a website. Sometimes these websites have measures in place that don't allow for automated/procedural replacing of text. 
-  - This can make some weird things happen, such as the website resetting the text to what is was before you converted. Sadly, I do not know if there is a way to circumvent this issue as it's usually done as a security measure.
+  - - This can make some weird things happen, such as the website resetting the text to what is was before you converted. Sadly, I do not know if there is a way to circumvent this issue as it's usually done as a security measure.
