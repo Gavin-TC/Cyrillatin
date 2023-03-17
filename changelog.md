@@ -1,4 +1,4 @@
-# Changelog
+# Changelog v1.30
 ## Fixed
 - "щ" character never being converted. ("щ" character's phonic is now "shch." Probably will be changed later on.)
 
