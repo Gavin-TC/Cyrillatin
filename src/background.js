@@ -10,6 +10,12 @@ chrome.contextMenus.create({
     contexts: ['selection'],
 });
 
+chrome.contextMenus.create({
+    title:"Cyrillatin | Help",
+    id: "github_help",
+    contexts: ['all'],
+});
+
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
     if (info.menuItemId === 'convert_cyrillic') {
@@ -17,6 +23,11 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
     }
     if (info.menuItemId === 'convert_latin') {
         convertLatin(tab, info.selectionText);
+    }
+    if (info.menuItemId === 'github_help') {
+        chrome.tabs.create({
+            url: "https://github.com/Gavin-TC/Cyrillatin/blob/rewrite/HELP.md"
+        });
     }
 });
 
@@ -32,7 +43,7 @@ var cyrillic_upper = [
 
 
 var phonics = [
-    "ts", "ya", "ee", "sha", "shch", "zh", "kh", "yo", "ch", "yu", "y'",
+    "ts", "ya", "ee", "sh", "shch", "zh", "kh", "yo", "ch", "yu", "y'",
     "u", "k", "n", "g", "f", "v", "a", "p", "r", "o", "l", "d", "z", "e", "s", "m", "i", "t", "b", "y", "'"
 ];
 var phonics_upper = [
