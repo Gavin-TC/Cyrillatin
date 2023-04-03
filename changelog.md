@@ -1,4 +1,7 @@
 # Changelog v1.31 (4/3/22)
+## Added
+- Options context menu button for general QOL
+
 ## Fixed
 - "ш" character being incorrectly transliterated to "sha" (Thanks xfra35!)
 
