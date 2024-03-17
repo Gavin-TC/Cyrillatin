@@ -1,4 +1,4 @@
-# ![alt text](https://github.com/Gavin-TC/Cyrillatin/blob/rewrite/src/icons/logo2_48.png) Cyrillatin 
+# ![alt text](https://github.com/Gavin-TC/Cyrillatin/blob/rewrite/src/icons/logo_2_48.png) Cyrillatin 
 Google Chrome extension that allows the conversion of phonics from the Latin alphabet into Russian Cyrillic.
 This makes it easy for people learning Russian to type in Cyrillic without having to learn the Cyrillic keyboard layout.
 
@@ -16,4 +16,4 @@ Cyrillatin is easy to use.
 - Then **right-click**, hover your mouse over "**Cyrillatin**" and click "**Convert to Latin**".
 - The **converted text** is now **copied** to your **clipboard**.
 
-**Example**: the Latin phonic "ponyal" would be converted into the Cyrillic "понял" meaning "got it" or "understood."
+**Example**: the Latin phonic "ponyal" would be converted into the Cyrillic "понял".
