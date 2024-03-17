@@ -2,28 +2,31 @@
     "manifest_version": 3,
     "name": "Cyrillatin",
     "description": "Allows conversion of latin phonics to cyrillic characters and vice versa.",
-    "version": "1.0.0",
+    "version": "1.3",
 
     "icons": {
-        "16": "icons/logo2_16.png",
-        "48": "icons/logo2_48.png",
-        "128": "icons/logo2_128.png"
+        "16": "icons/logo_2_16.png",
+        "48": "icons/logo_2_48.png",
+        "128": "icons/logo_2_128.png"
     },
 
     "permissions": [
-        "contextMenus",
-        "tabs"
+        "contextMenus"
     ],
 
     "content_scripts": [{
         "matches": [
             "<all_urls>"
         ],
-        "js": ["content.js"],
-        "run-at": "document_end"
+        "js": ["content.js"]
     }],
 
     "background": {
         "service_worker": "background.js"
+    },
+
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_title": "Cyrillatin"
     }
 }
