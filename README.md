@@ -1,4 +1,4 @@
-# ![alt text](https://github.com/Gavin-TC/Cyrillatin/blob/rewrite/src/icons/logo2_48.png) Cyrillatin 
+# ![alt text](https://github.com/Gavin-TC/Cyrillatin/blob/rewrite/src/icons/logo_2_48.png) Cyrillatin 
 Google Chrome extension that allows the conversion of phonics from the Latin alphabet into Russian Cyrillic.
 This makes it easy for people learning Russian to type in Cyrillic without having to learn the Cyrillic keyboard layout.
 
