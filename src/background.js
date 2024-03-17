@@ -42,11 +42,11 @@ var cyrillic_upper = [
 ];
 
 
-var phonics = [
+var latin = [
     "ts", "ya", "ee", "sh", "shch", "zh", "kh", "yo", "ch", "yu", "y'",
     "u", "k", "n", "g", "f", "v", "a", "p", "r", "o", "l", "d", "z", "e", "s", "m", "i", "t", "b", "y", "'"
 ];
-var phonics_upper = [
+var latin_upper = [
     "TS", "YA", "EE", "SH", "SHCH", "ZH", "KH", "YO", "CH", "YU", "Y'",
     "U", "K", "N", "G", "F", "V", "A", "P", "R", "O", "L", "D", "Z", "E", "S", "M", "I", "T", "B", "Y", "'"
 ]
@@ -59,15 +59,14 @@ function convertCyrillic(tab, selected_text) {
     original_text = selected_text;
 
     for (let i = 0; i < selected_text.length; i++) { // check every character inside of the selected_text
-        for (let j = 0; j < phonics.length; j++) { // check if the current character contains an item from the phonics array, lowercase first
-            console.log(j);
-            if (selected_text.includes(phonics[j])) { // replace the character that matches the corresponding phonic with the corresponding cyrillic character
-                selected_text = selected_text.replace(phonics[j], cyrillic[j]);
-                j = -1;
+        for (let j = 0; j < latin.length; j++) { // check if the current character contains an item from the phonics array, lowercase first
+            if (selected_text.includes(latin[j])) { // replace the character that matches the corresponding phonic with the corresponding cyrillic character
+                selected_text = selected_text.replace(latin[j], cyrillic[j]);
+                break;
             }
-            if(selected_text.includes(phonics_upper[j])) {
-                selected_text = selected_text.replace(phonics_upper[j], cyrillic_upper[j]);
-                j = -1;
+            if(selected_text.includes(latin_upper[j])) {
+                selected_text = selected_text.replace(latin_upper[j], cyrillic_upper[j]);
+                break;
             }
         }
     }
@@ -83,12 +82,12 @@ function convertLatin(tab, selected_text) {
     for (let i = 0; i < selected_text.length; i++) { // check every character inside of the selected_text
         for (let j = 0; j < cyrillic.length; j++) { // check if the current character contains an item from the cyrillic array
             if (selected_text.includes(cyrillic[j])) { // replace the character that matches the corresponding phonic with the corresponding cyrillic character
-                selected_text = selected_text.replace(cyrillic[j], phonics[j]);
-                j = -1;
+                selected_text = selected_text.replace(cyrillic[j], latin[j]);
+                break;
             }
             if(selected_text.includes(cyrillic_upper[j])) {
-                selected_text = selected_text.replace(cyrillic_upper[j], phonics_upper[j]);
-                j = -1;
+                selected_text = selected_text.replace(cyrillic_upper[j], latin_upper[j]);
+                break;
             }
         }
     }
